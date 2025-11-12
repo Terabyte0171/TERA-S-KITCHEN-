@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tera's Kitchen - Order Now</title>
+  <style>
+    body {
+      background-color: yellow;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    
+    .wrapper {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    h1 {
+      text-align: center;
+      color: #e23d3d;
+    }
+    
+    .button {
+      border: none;
+      font-size: 1rem;
+      border-radius: 5px;
+      padding: 12px 30px;
+      background-color: #e23d3d;
+      color: #fafafa;
+      outline: 0;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+      transition: all 0.2s;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #f84848;
+      transform: translateY(-2px);
+    }
+    
+    .button:active {
+      transform: scale(0.95);
+    }
+    
+    .whatsapp-btn {
+      background-color: #25D366 !important;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+    
+    .whatsapp-btn:hover {
+      background-color: #128C7E !important;
+    }
+
+    input, select, textarea {
+      width: 250px;
+      padding: 12px;
+      margin: 8px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      background-color: snow;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    
+    textarea {
+      width: 300px;
+      height: 100px;
+      resize: vertical;
+    }
+    
+    .footer {
+      background: #f8f8f8;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+      border-left: 4px solid #e23d3d;
+      text-align: center;
+    }
+    
+    .contact-info {
+      text-align: center;
+      margin: 20px 0;
+      padding: 15px;
+    }
+    
+    .social-links {
+      text-align: center;
+      margin: 20px 0;
+    }
+    
+    .social-links a {
+      display: inline-block;
+      margin: 8px;
+      padding: 10px 20px;
+      background: #e23d3d;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: all 0.2s;
+      font-size: 14px;
+    }
+    
+    .social-links a:hover {
+      background: #f84848;
+      transform: translateY(-2px);
+    }
+    
+    .message-section {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .social-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    
+    .social-item {
+      text-align: center;
+      margin: 5px;
+    }
+    
+    .social-icon {
+      font-size: 16px;
+      margin-right: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <h1>ORDER NOW</h1>
+    <p style="text-align: center;">You Can Order Our Amazing Dishes At Affordable Prices Here👇👇</p>
+    
+    <form id="orderForm">
+      <center>
+        <input type="text" id="fullName" placeholder="Your full name" required>
+        <br>
+        
+        <!-- Food Menu Selection -->
+        <select id="foodMenu" required>
+          <option value="">Select Food Menu</option>
+          <option value="JOLLOF RICE">JOLLOF RICE</option>
+          <option value="BEANS & PLANTAIN">BEANS & PLANTAIN</option>
+          <option value="AMALA & SOUP">AMALA & SOUP</option>
+          <option value="YAM & EGG SAUCE">YAM & EGG SAUCE</option>
+          <option value="SEMO & VEGETABLE">SEMO & VEGETABLE</option>
+          <option value="FRIED RICE">FRIED RICE</option>
+          <option value="COMBO (JOLLOF & FRIED RICE)">COMBO (JOLLOF & FRIED RICE)</option>
+          <option value="VEGETABLE (EGUSI)">VEGETABLE (EGUSI)</option>
+          <option value="SMALL CHOPS">SMALL CHOPS</option>
+        </select>
+        <br>
+        
+        <select id="foodClass" required>
+          <option value="">Food category</option>
+          <option value="REGULAR">REGULAR</option>
+          <option value="VIP">VIP</option>
+          <option value="VVIP">VVIP</option>
+        </select>
+        <br>
+        
+        <input type="number" id="quantity" placeholder="Quantity (how many packs)" min="1" required>
+        <br>
+        
+        <input type="text" id="address" placeholder="Your delivery address" required>
+        <br>
+        
+        <button type="button" class="button whatsapp-btn" onclick="sendOrderToWhatsApp()">
+          📱 SEND ORDER VIA WHATSAPP
+        </button>
+      </center>
+    </form>
+    
+    <div class="footer">
+      <p><strong>NOTE:</strong> IN CASE IF WE DON'T HAVE THE KIND OF MENU YOU WANT, YOU CAN KINDLY DROP A MESSAGE STATING THE KIND OF FOOD YOU WANT. AND WE WOULD BE GLAD TO SEE IF WE CAN GRANT YOUR REQUEST. THANKS IN ANTICIPATION</p>
+    </div>
+
+    <!-- Special Message Section -->
+    <div class="message-section">
+      <h2 style="text-align: center;">Special Requests</h2>
+      <center>
+        <textarea id="specialRequest" placeholder="Write your message here if you want something different from our menu..."></textarea>
+        <br>
+        <button type="button" class="button" onclick="sendSpecialMessage()">
+          Send Message
+        </button>
+      </center>
+    </div>
+    
+    <div class="contact-info">
+      <h2>Contact Us</h2>
+      <p>We'll respond to your order within minutes!</p>
+    </div>
+    
+    <div class="social-links">
+      <h2>TERA'S KITCHEN</h2>
+      <div class="social-container">
+        <!-- WhatsApp -->
+        <div class="social-item">
+          <a href="https://wa.me/message/75VMP3UJSOOTB1" target="_blank" class="social-link">
+            <span class="social-icon">📱</span> WhatsApp
+          </a>
+        </div>
+        
+        <!-- Instagram -->
+        <div class="social-item">
+          <a href="https://www.instagram.com/danielolanrewaju40?igsh=dnptZnhtemZ1YWph" target="_blank" class="social-link">
+            <span class="social-icon">📸</span> Instagram
+          </a>
+        </div>
+        
+        <!-- Facebook -->
+        <div class="social-item">
+          <a href="https://www.facebook.com/daniel.olanrewaju.733" target="_blank" class="social-link">
+            <span class="social-icon">👤</span> Facebook
+          </a>
+        </div>
+        <br>
+                <!-- Gmail -->
+        <div class="social-item">
+          <class="social-link">
+            <span class="social-icon">✉️</span>danielolanrewaju2007@gmail.com
+          </a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function sendOrderToWhatsApp() {
+      // Get form values
+      const name = document.getElementById('fullName').value;
+      const foodMenu = document.getElementById('foodMenu').value;
+      const foodClass = document.getElementById('foodClass').value;
+      const quantity = document.getElementById('quantity').value;
+      const address = document.getElementById('address').value;
+      
+      // Validate required fields
+      if (!name || !foodMenu || !foodClass || !quantity || !address) {
+        alert('Please fill in all required fields!');
+        return;
+      }
+      
+      // Create the message in your exact format
+      const message = `Hi😃, my name is ${name.toUpperCase()} i want to order for ${foodMenu.toUpperCase()} in the ${foodClass.toUpperCase()} pack and I will be ordering ${quantity} packs, my delivery address is ${address.toUpperCase()}`;
+      
+      // Your WhatsApp number
+      const phoneNumber = "2347040243242"; // Replace with your actual number
+      
+      // Create WhatsApp URL
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+      
+      // Open WhatsApp
+      window.open(whatsappUrl, '_blank');
+    }
+
+    function sendSpecialMessage() {
+      const specialRequest = document.getElementById('specialRequest').value;
+      
+      if (!specialRequest) {
+        alert('Please write your special request message!');
+        return;
+      }
+      
+      const message = `SPECIAL REQUEST: ${specialRequest}`;
+      const phoneNumber = "2347040243242"; // Replace with your actual number
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+      
+      window.open(whatsappUrl, '_blank');
+    }
+  </script>
+</body>
+</html>

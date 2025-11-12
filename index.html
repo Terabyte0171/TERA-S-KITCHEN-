@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Food Menu</title>
+  <style>
+    .facebook, .apple, .google {
+      position: relative;
+      margin-top: 20px;
+      height: 50px;
+      width: 55px;
+      border: 1px solid rgba(73,73,73,0.908);
+      background-color: hsla(237.4,4.7%,11.1%,0.916);
+      border-radius: 50px;
+    }
+
+    .ficon {
+      position: absolute;
+      top: 10px;
+      left: 12px;
+      font-size: 25px;
+      height: 30px;
+      width: 30px;
+      border-radius: 50px;
+      background-color: rgba(17,119,197,0.918);
+    }
+
+    .apicon {
+      position: absolute;
+      top: 10px;
+      left: 12px;
+      font-size: 25px;
+      height: 30px;
+      width: 30px;
+      border-radius: 50px;
+      background-color: rgba(17,119,197,0.918);
+    }
+
+    body {
+      background-color: yellow;
+      margin: 0;
+      padding: 20px;
+    }
+
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 10px solid #fff;
+      display: block;
+      margin: 10px auto;
+    }
+
+    p {
+      margin-left: 20px;
+    }
+
+    .btn {
+      border: none;
+      font-size: 1rem;
+      border-radius: 0.1rem;
+      padding: 1rem;
+      background-color: #e23d3d;
+      color: #fafafa;
+      outline: 0;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+      transition: all 0.2s;
+      margin: 10px;
+    }
+
+    .btn:hover {
+      background-color: #f84848;
+      cursor: pointer;
+    }
+
+    .btn:active {
+      transform: scale(0.9);
+    }
+
+    .food-card {
+      background: white;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .price {
+      margin: 10px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      font-size: 2rem;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Your food menu items with CORRECTED image paths -->
+  <h1 class="section-heading">TERA'S KITCHEN</h1>
+
+  <!-- JOLLOF RICE -->
+  <div class="food-card">
+    <h2>JOLLOF RICE</h2>
+    <img src="images/1762951776625.jpg" alt="Jollof Rice">
+    <div class="price">
+      <h3>REGULAR=$1.25<br>VIP=$2.67<br>VVIP=$3.95</h3>
+    </div>
+    <button class="btn" onclick="window.location.href='order.html'">ORDER</button>
+  </div>
+
+  <!-- BEANS & PLANTAIN -->
+  <div class="food-card">
+    <h2>BEANS & PLANTAIN</h2>
+    <img src="images/1762952027536.jpg" alt="Beans and Plantain">
+    <div class="price">
+      <h3>REGULAR=$1.25<br>VIP=$2.67<br>VVIP=$3.95</h3>
+    </div>
+    <button class="btn" onclick="window.location.href='order.html'">ORDER</button>
+  </div>
+
+  <!-- AMALA & SOUP -->
+  <div class="food-card">
+    <h2>AMALA & SOUP</h2>
+    <img src="images/1762954009155.jpg" alt="Amala and Vegetable">
+    <div class="price">
+      <h3>REGULAR=$1.25<br>VIP=$2.67<br>VVIP=$3.95</h3>
+    </div>
+    <button class="btn" onclick="window.location.href='order.html'">ORDER</button>
+  </div>
+
+  <!-- YAM & EGG SAUCE -->
+  <div class="food-card">
+    <h2>YAM & EGG SAUCE</h2>
+    <img src="images/1762952421287.jpg" alt="Yam and Egg Sauce">
+    <div class="price">
+      <h3>REGULAR=$1.25<br>VIP=$2.67<br>VVIP=$3.95</h3>
+    </div>
+    <button class="btn" onclick="window.location.href='order.html'">ORDER</button>
+  </div>
+
+  <!-- SEMO & VEGETABLE -->
+  <div class="food-card">
+    <h2>SEMO & VEGETABLE</h2>
+    <img src="images/1762968660908.jpg" alt="Semo and Vegetable">
+    <div class="price">
+      <h3>REGULAR=$1.25<br>VIP=$2.67<br>VVIP=$3.95</h3>
+    </div>
+    <button class="btn" onclick="window.location.href='order.html'">ORDER</button>
+  </div>
+
+  <!-- FRIED RICE -->
+  <div class="food-card">
+    <h2>FRIED RICE</h2>
+    <img src="images/1762951793119.jpg" alt="Fried Rice">
+    <div class="price">
+      <h3>REGULAR=$1.25<br>VIP=$2.67<br>VVIP=$3.95</h3>
+    </div>
+    <button class="btn" onclick="window.location.href='order.html'">ORDER</button>
+  </div>
+
+  <!-- COMBO -->
+  <div class="food-card">
+    <h2>COMBO (Jollof & Fried Rice)</h2>
+    <img src="images/1762951756669.jpg" alt="Combo Meal">
+    <div class="price">
+      <h3>REGULAR=$1.25<br>VIP=$2.67<br>VVIP=$3.95</h3>
+    </div>
+    <button class="btn" onclick="window.location.href='order.html'">ORDER</button>
+  </div>
+
+  <!-- SOUPS SECTION -->
+  <h1 class="section-heading">SOUP</h1>
+  
+  <!-- VEGETABLE (EGUSI) -->
+  <div class="food-card">
+    <h2>VEGETABLE (EGUSI)</h2>
+    <img src="images/1762952293287.jpg" alt="Vegetable Egusi Soup">
+    <div class="price">
+      <h3>REGULAR=$1.25<br>VIP=$2.67<br>VVIP=$3.95</h3>
+    </div>
+    <button class="btn" onclick="window.location.href='order.html'">ORDER</button>
+  </div>
+
+  <!-- SNACKS SECTION -->
+  <h1 class="section-heading">SNACKS</h1>
+  
+  <!-- SMALL CHOPS -->
+  <div class="food-card">
+    <h2>SMALL CHOPS</h2>
+    <img src="images/1762953741233.jpg" alt="Small Chops">
+    <div class="price">
+      <h3>REGULAR=$1.25<br>VIP=$2.67<br>VVIP=$3.95</h3>
+    </div>
+    <button class="btn" onclick="window.location.href='order.html'">ORDER</button>
+  </div>
+
+</body>
+</html>
